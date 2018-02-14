@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>More Javascript</title>
+		
+		<script>
+			var users = [
+				{
+					"Song": "Let it Be",
+					"By": "The Beatles",
+					
+				},
+				{
+					"Song": "River",
+					"By": "Eminem",
+					
+				},
+				{
+					"Song": "Minority",
+					"By": "Green Day",
+					
+				},
+				{
+					"Song": "Comfortably Numb",
+					"By": "Pink Floyd",
+					
+				},
+				{
+					"Song": "Bohemian Rhapsody",
+					"By": "Queen",
+					
+				}
+			];
+		</script>
+	</head>
+	<body>
+		<h1>Javascript Looping</h1>
+		<table id="track"></table><br><br>
+		<h2>Song Table</h2>
+		<table>
+			<thead>
+				<tr><th>Song</th><th>By</th></tr>
+			</thead>
+			<tbody id="newtrack">
+				
+			</tbody>
+		</table>
+		<script>
+			/*document.write(users[0].First);*/
+			var text = "";
+			var newtext = "";
+			/*var x;*/
+			for (var x in users) {
+				if (users.hasOwnProperty(x)) {
+					var obj = users[x];
+					for (var y in obj) {
+						if (obj.hasOwnProperty(y)) {
+							text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
+							
+							/*document.write(y + " -> " + obj[y] + '\n');*/
+						}
+					}
+				newtext += "<tr><td>" + obj['Song'] + ": " + obj['By'] + "</td><td>";
+				}
+			}
+			document.getElementById("track").innerHTML = text;
+			document.getElementById("newtrack").innerHTML = newtext;
+			document.getElementById("people").innerHTML = text;
+		</script>
+	</body>
+</html>
