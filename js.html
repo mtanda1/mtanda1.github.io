@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="p1">Welcome to Marco's website</p>
+	<style type="text/css">
+		#square {
+			margin-top: 20px;
+			margin-left: 100px;
+			height: 200px;
+			width: 200px;
+			background: darkgreen;
+		}
+
+		div {
+			margin-bottom: 20px;
+		}
+
+		.round {
+			border-radius: 20px;
+		}
+
+		#square:hover{
+			cursor: pointer;
+		}
+		
+	</style>
+</head>
+<body>
+<script>
+alert("Hello! I am displaying a message!!");
+
+</script>
+
+<div id="test" class="t_class"></div>
+
+
+	<div id="square" onclick='window.location.href = "http://mtanda1.github.io"'></div>
+
+	<div>
+		<p> This green button will bring you to https://mtanda1.github.io </p>
+	</div>
+<script>
+
+function show_sentence(){
+	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
+}
+
+</script>
+
+</body>
+</html>
+<script>
+document.getElementById("p1").style.color = "violet";
+</script>
+</body>
+</html>
