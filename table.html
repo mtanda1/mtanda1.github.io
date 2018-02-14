@@ -1,7 +1,6 @@
 <html>
 	<head>
 		<title>More Javascript</title>
-		
 		<script>
 			var users = [
 				{
@@ -38,10 +37,9 @@
 		<h2>Song Table</h2>
 		<table>
 			<thead>
-				<tr><th>Song</th><th>By</th></tr>
+				<tr ><th align="left"> Song</th><th align="center">By</tr></th></tr>
 			</thead>
 			<tbody id="newtrack">
-				
 			</tbody>
 		</table>
 		<script>
@@ -57,12 +55,11 @@
 							/*document.write(y + " -> " + obj[y] + '\n');*/
 						}
 					}
-				newtext += "<tr><td>" + obj['Song'] + ": "+ obj['By'] + "</td><td>";
+				newtext += "<tr><td>" + obj['Song'] + "</td>"+"<td align = 'right'>"+obj['By']+"</tr></td>";
 				}
 			}
 			document.getElementById("track").innerHTML = text;
 			document.getElementById("newtrack").innerHTML = newtext;
-			document.getElementById("people").innerHTML = text;
 		</script>
 	</body>
 </html>
