@@ -6,26 +6,29 @@
 				{
 					"Song": "Let it Be",
 					"By": "The Beatles",
+					"time_sec": 243
 					
 				},
 				{
 					"Song": "River",
 					"By": "Eminem",
-					
+					"time_sec": 221
 				},
 				{
 					"Song": "Minority",
 					"By": "Green Day",
-					
+					"time_sec": 170
 				},
 				{
 					"Song": "Comfortably Numb",
 					"By": "Pink Floyd",
+					"time_sec": 414
 					
 				},
 				{
 					"Song": "Bohemian Rhapsody",
 					"By": "Queen",
+					"time_sec": 363
 					
 				}
 			];
@@ -37,29 +40,88 @@
 		<h2>Song Table</h2>
 		<table>
 			<thead>
-				<tr ><th align="left"> Song</th><th align="center">By</tr></th></tr>
+				<tr ><th align="left"> Song</th><th align="center">By</th><th align="right">time_sec</th></tr></tr>
 			</thead>
 			<tbody id="newtrack">
 			</tbody>
 		</table>
 		<script>
 			/*document.write(users[0].First);*/
+			var song_count = 0;
+			var song_time = 0;
 			var text = "";
 			var newtext = "";
 			/*var x;*/
 			for (var x in users) {
 				if (users.hasOwnProperty(x)) {
 					var obj = users[x];
+					
 					for (var y in obj) {
 						if (obj.hasOwnProperty(y)) {
 							/*document.write(y + " -> " + obj[y] + '\n');*/
+
 						}
 					}
-				newtext += "<tr><td>" + obj['Song'] + "</td>"+"<td align = 'right'>"+obj['By']+"</tr></td>";
+				song_count += 1;
+				//song_time += number(time_sec);
+				//document.write(number(time_sec));
+				song_time +=(obj['time_sec'])
+				newtext += "<tr><td>" + obj['Song'] + "</td>"+"<td>"+obj['By']+"</td>"+"<td>"+obj['time_sec']+"</tr></td>";
 				}
 			}
-			document.getElementById("track").innerHTML = text;
+			//print(song_time)
+			//print(song_count)
 			document.getElementById("newtrack").innerHTML = newtext;
+
+			document.write(song_time);
+		</script>
+	
+
+
+
+
+
+
+
+
+
+		<script>
+			var summary = [
+				{
+					"Song_count": song_count,
+					"artist_count": song_count,
+					"time_count": song_time
+					
+				}
+			];
+		</script>
+	</head>
+	<body>
+		<table id="track1"></table><br><br>
+		<h2>stat table</h2>
+		<table>
+			<thead>
+				<tr ><th align="left">Song_count</th><th align="center">artist_count</th><th align="right">time_count</th></tr></tr>
+			</thead>
+			<tbody id="newtrack1">
+			</tbody>
+		</table>
+		<script>
+			/*document.write(users[0].First);*/
+			var sumtext = "";
+			for (var x in summary) {
+				if (summary.hasOwnProperty(x)) {
+					var obj = summary[x];
+					for (var y in obj) {
+						if (obj.hasOwnProperty(y)) {
+						}
+					}
+				sumtext += "<tr><td>" + obj['Song_count'] + "</td>"+"<td>"+obj['artist_count']+"</td>"+"<td>"+obj['time_count']+'sec'+"</tr></td>";
+
+				}
+			}
+			document.getElementById("newtrack1").innerHTML = sumtext;
 		</script>
 	</body>
+	
 </html>
